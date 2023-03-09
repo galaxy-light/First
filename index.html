@@ -55,6 +55,8 @@ $('body').on('touchstart', function(e) {
 });
 
 $('body').on('touchmove', function(e) {
+    alert("2");
+  
     var touchY = e.originalEvent.touches[0].clientY;
     
     alert("touchY : " + touchY);
