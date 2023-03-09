@@ -37,6 +37,10 @@
   html.css('overflow-y', 'hidden');
   //above code works on mobile Chrome/Edge/Firefox
   document.ontouchmove=function(e){e.preventDefault();} //Add this only for mobile Safari  
+  
+  var html2=jQuery('html');
+  html2.css('overflow-y', 'scroll');
+  document.ontouchmove=function(e){return true;}
   // 테스트  
   
 </script>
@@ -47,7 +51,7 @@
   }
   
   html body {
-    overflow: hidden;
+    //overflow: hidden;
   }
 </style>
 </head>
