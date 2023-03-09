@@ -40,6 +40,8 @@ var lastTouchY = 0;
 var preventPullToRefresh = false;
 
 $('body').on('touchstart', function(e) {
+    alert("1");
+  
     if (e.originalEvent.touches.length != 1) {
         return;
     }
