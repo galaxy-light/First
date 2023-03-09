@@ -53,9 +53,11 @@ $(document).bind('touchend', function(e) {
   
   alert(endY);
   
-  alert("result : " + startY - endY);
+  var result = parseInt(startY - endY);
   
-  if ((startY - endY) > 30) {
+  alert("result : " + result);
+  
+  if (result > 30) {
   	e.preventDefault();
   }
 });
