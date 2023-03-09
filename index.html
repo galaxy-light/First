@@ -33,16 +33,19 @@
   // ios zoom 방지 테스트 코드
   
   // ios 당겨서 새로 고침 방지
-  function preventDefault(e){
-    e.preventDefault();
-  }
-
-  function disableScroll(){
-      document.body.addEventListener('touchmove', preventDefault, { passive: false });
-  }
-  function enableScroll(){
-      document.body.removeEventListener('touchmove', preventDefault);
-  }
+  var xStart, yStart = 0; 
+  document.addEventListener('touchstart', function(e) {
+      xStart = e.touches[0].screenX;
+      yStart = e.touches[0].screenY;
+  });
+  
+  document.addEventListener('touchmove', function(e) {
+      var xMovement = Math.abs(e.touches[0].screenX - xStart);
+      var yMovement = Math.abs(e.touches[0].screenY - yStart);
+      if((yMovement * 3) > xMovement) {
+          e.preventDefault();
+      }
+  });
   // ios 당겨서 새로 고침 방지
 </script>
 
