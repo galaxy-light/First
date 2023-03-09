@@ -12,29 +12,25 @@
 
   gtag('config', 'G-11VMZC3BRC');
   
+  // ios zoom 방지 테스트 코드
   document.addEventListener('gesturestart', function(e) {
     e.preventDefault();
     // special hack to prevent zoom-to-tabs gesture in safari
-    document.body.style.zoom = 0.99;
-    
-    alert('1');
-    });
+    //document.body.style.zoom = 0.99;
+  });
 
-    document.addEventListener('gesturechange', function(e) {
-        e.preventDefault();
-        // special hack to prevent zoom-to-tabs gesture in safari
-        document.body.style.zoom = 0.99;
-      
-      alert('2');
-    });
+  document.addEventListener('gesturechange', function(e) {
+      e.preventDefault();
+      // special hack to prevent zoom-to-tabs gesture in safari
+      //document.body.style.zoom = 0.99;
+  });
 
-    document.addEventListener('gestureend', function(e) {
-        e.preventDefault();
-        // special hack to prevent zoom-to-tabs gesture in safari
-        document.body.style.zoom = 0.99;
-      
-      alert('3');
-    });
+  document.addEventListener('gestureend', function(e) {
+      e.preventDefault();
+      // special hack to prevent zoom-to-tabs gesture in safari
+      //document.body.style.zoom = 0.99;
+  });
+  // ios zoom 방지 테스트 코드
 </script>
 </head>
 <body>
