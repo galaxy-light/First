@@ -36,16 +36,11 @@
   /* ios 당겨서 새로 고침 방지 - safari에서는 동작했으나, teams 내 앱에선 동작하지 않았음 */
   html {
     //overscroll-behavior: none;
-    overscroll-behavior : contain;
   }
   
-  html, body {
-    //overflow: hidden;
-    width : 100%;
-    height : 100%;
-    margin : 0;
-    padding : 0;
-    border : none;  
+  html, body { 
+    position:fixed;
+    overflow:hidden;
   }
 </style>
 </head>
