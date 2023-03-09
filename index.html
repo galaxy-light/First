@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-11VMZC3BRC"></script>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inobounce/0.2.0/inobounce.js"></script>
+  
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -33,25 +36,6 @@
   // ios zoom 방지 테스트 코드
   
   // ios 당겨서 새로 고침 방지
-  function preventPullToRefresh(element) {
-    var prevent = false;
-
-    document.querySelector(element).addEventListener('touchstart', function(e){
-      if (e.touches.length !== 1) { return; }
-
-      var scrollY = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
-      prevent = (scrollY === 0);
-    });
-
-    document.querySelector(element).addEventListener('touchmove', function(e){
-      if (prevent) {
-        prevent = false;
-        e.preventDefault();
-      }
-    });
-  }
-
-  preventPullToRefresh('body') // pass #id or html tag into the method
   // ios 당겨서 새로 고침 방지
 </script>
 </head>
