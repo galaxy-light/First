@@ -32,6 +32,23 @@
   //});
   // ios zoom 방지 테스트 코드
   
+  // ios 당겨서 새로 고침 방지
+  let _startY;
+  
+  document.addEventListener('touchstart', e => {
+    _startY = e.touches[0].pageY;
+  }, {passive: true});
+
+  document.addEventListener('touchmove', e => {
+    const y = e.touches[0].pageY;
+    // Activate custom pull-to-refresh effects when at the top of the container
+    // and user is scrolling up.
+    if (document.scrollingElement.scrollTop === 0 && y > _startY &&
+        !document.body.classList.contains('refreshing')) {
+      // refresh.
+    }
+  }, {passive: true});
+  // ios 당겨서 새로 고침 방지
   
   
 </script>
@@ -40,7 +57,6 @@
   /* ios 당겨서 새로 고침 방지 */
   html {
     //overscroll-behavior: none;
-    overscroll-behavior: contain;
   }
 </style>
 </head>
