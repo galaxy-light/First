@@ -33,30 +33,17 @@
   // ios zoom 방지 테스트 코드
   
   // ios 당겨서 새로 고침 방지
-  // Prevent pull refresh chrome
-  var lastTouchY = 0;
-  var preventPullToRefresh = false;
-  window.document.body.addEventListener("touchstart", function(e){
-      if (e.touches.length != 1) { return; }
-      lastTouchY = e.touches[0].clientY;
-      preventPullToRefresh = window.pageYOffset == 0;
-  }, false);
-
-  window.document.body.addEventListener("touchmove", function(e){
-
-      var touchY = e.touches[0].clientY;
-      var touchYDelta = touchY - lastTouchY;
-      lastTouchY = touchY;
-      if (preventPullToRefresh) {
-          // To suppress pull-to-refresh it is sufficient to preventDefault the first overscrolling touchmove.
-          preventPullToRefresh = false;
-          if (touchYDelta > 0) {
-              e.preventDefault();
-              return;
-          }
-      }
-
-  }, false);
+  document.addEventListener("touchstart", function(e){
+      scrollTo(0, 1);
+  });
+  
+  document.addEventListener("touchmove", function(e){
+      scrollTo(0, 1);
+  });
+  
+  document.addEventListener("touchcancel", function(e){
+      scrollTo(0, 1);
+  });  
   // ios 당겨서 새로 고침 방지
 </script>
 
