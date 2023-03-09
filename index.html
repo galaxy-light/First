@@ -49,7 +49,7 @@ $(document).bind('touchmove', function(e) {
 });
 
 $(document).bind('touchend', function(e) {
-	endY = e.originalEvent.touches[0].screenY;
+	endY = e.originalEvent.changedTouches[0].screenY;
   
   alert(endY);
   
