@@ -33,17 +33,8 @@
   // ios zoom 방지 테스트 코드
   
   // ios 당겨서 새로 고침 방지
-  document.addEventListener("touchstart", function(e){
-      scrollTo(0, 1);
-  });
-  
-  document.addEventListener("touchmove", function(e){
-      scrollTo(0, 1);
-  });
-  
-  document.addEventListener("touchcancel", function(e){
-      scrollTo(0, 1);
-  });  
+  document.addEventListener('touchstart', touchstartHandler, {passive: false});
+  document.addEventListener('touchmove', touchmoveHandler, {passive: false});
   // ios 당겨서 새로 고침 방지
 </script>
 
