@@ -36,22 +36,19 @@
   
   // 테스트
 var startY = 0;
+var moveY = 0;
 var endY = 0;
 
 $(document).bind('touchstart', function(e) {
-	startY = e.originalEvent.touches[0].screenY; 
-  
-  alert(startY);
+	startY = e.originalEvent.changedTouches[0].clientY;
 });
 
 $(document).bind('touchmove', function(e) {
-		
+	moveY = e.originalEvent.changedTouches[0].clientY;
 });
 
 $(document).bind('touchend', function(e) {
-	endY = e.originalEvent.changedTouches[0].screenY;
-  
-  alert(endY);
+	endY = e.originalEvent.changedTouches[0].clientY;
   
   var result = parseInt(startY - endY);
   
