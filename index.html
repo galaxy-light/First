@@ -37,18 +37,18 @@
   // 테스트
 	$(document).bind('touchstart', function(e) {
 
-	});
+});
 
-	$(document).bind('touchmove', function(e) {
-	    e.preventDefault();
+$(document).bind('touchmove', function(e) {
+		alert(e.originalEvent.touches[0].screenX);
+    alert(e.originalEvent.touches[0].screenY);
+    
+    e.preventDefault();
+});
 
-			alert(e.originalEvent.touches[0].screenX);
-	    alert(e.originalEvent.touches[0].screenY);
-	});
+$(document).bind('touchend', function(e) {
 
-	$(document).bind('touchend', function(e) {
-
-	});
+});
   // 테스트
   
 </script>
