@@ -34,13 +34,17 @@
 </script>
 
 <style>
-  body { 
-   // 끌어서 새로 고침을 비활성화합니다. 
-   // 오버스크롤 글로우 효과를 허용합니다.
-    overscroll-behavior-y: include; 
+   html {
+    position: relative;
+    overflow-y: scroll;
   }
-</style>  
 
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+</style>
 </head>
 <body>
 <h1><a href="index.html">대한민국</a></h1>
